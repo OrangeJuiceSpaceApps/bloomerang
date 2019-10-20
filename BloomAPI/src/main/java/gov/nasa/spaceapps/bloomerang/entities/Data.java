@@ -1,9 +1,13 @@
-package org.spaceappschallenge.BloomAPI;
+package gov.nasa.spaceapps.bloomerang.entities;
+
+import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Data {
+import gov.nasa.spaceapps.bloomerang.interfaces.BloomerangDataLoader;
+
+public class Data implements BloomerangDataLoader{
 	private Double latitude;
 	private Double longitude;
 	private Double temperature;
@@ -72,5 +76,41 @@ public class Data {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	@Override
+	public void load() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Map<Coordinates, Map<Integer, Integer>> getSalinityMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Coordinates, Map<Integer, Integer>> getTemperatureMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Coordinates, Map<Integer, Integer>> getDisolvedOxigenMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Coordinates, Map<Integer, Integer>> getPhosphateMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<Coordinates, Map<Integer, Integer>> getNitrateMap() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

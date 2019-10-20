@@ -1,41 +1,21 @@
-package org.spaceappschallenge.BloomAPI;
+package gov.nasa.spaceapps.bloomerang.utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
-import java.util.TreeMap;
 
 import gov.nasa.spaceapps.bloomerang.entities.Data;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static final String CSV_SYMBOL = ",";
-	public static final String COMMENT_SYMBOL = "#";
-
-	public static void main( String[] args )
-    {
-    	Map<String, Data> records =  new TreeMap<>();
-    	readDataTemperature(records, "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_A5B7_t07gp01.csv");
-    	readDataSalinity(records, "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_A5B7_s07gp01.csv");
-    	readDataOxy(records, "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_O07gp01.csv");
-    	readDataPhosphate(records, "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_p07gp01.csv");
-    	readDataNitrate(records, "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_n07gp01.csv");
-        System.out.println(records.get("-0.5|0.5"));
-    }
-    
-    public static Map<String, Data> readDataTemperature(Map<String, Data> records, String file) {
+public class Util {
+	public static Map<String, Data> readDataTemperature(Map<String, Data> records, String file) {
 //    	Map<String, Data> records =  new TreeMap<>();
     	try (BufferedReader br = new BufferedReader(new FileReader(file))) {
     	    String line;
     	    while ((line = br.readLine()) != null) {
-    	    	if(!line.substring(0, 1).equals(COMMENT_SYMBOL)) {
-    	    		String[] values = line.split(CSV_SYMBOL);
+    	    	if(!line.substring(0, 1).equals(Constants.COMMENT_SYMBOL)) {
+    	    		String[] values = line.split(Constants.CSV_SYMBOL);
     	    		if(values.length >= 2) {
     	    			Double latitude = Double.valueOf(values[0].replace(".", ""))/1000;
     	    			Double longitude = Double.valueOf(values[1].replace(".", ""))/1000;
@@ -80,8 +60,8 @@ public class App
     	try (BufferedReader br = new BufferedReader(new FileReader(file))) {
     	    String line;
     	    while ((line = br.readLine()) != null) {
-    	    	if(!line.substring(0, 1).equals(COMMENT_SYMBOL)) {
-    	    		String[] values = line.split(CSV_SYMBOL);
+    	    	if(!line.substring(0, 1).equals(Constants.COMMENT_SYMBOL)) {
+    	    		String[] values = line.split(Constants.CSV_SYMBOL);
     	    		if(values.length >= 2) {
     	    			Double latitude = Double.valueOf(values[0].replace(".", ""))/1000;
     	    			Double longitude = Double.valueOf(values[1].replace(".", ""))/1000;
@@ -126,8 +106,8 @@ public class App
     	try (BufferedReader br = new BufferedReader(new FileReader(file))) {
     	    String line;
     	    while ((line = br.readLine()) != null) {
-    	    	if(!line.substring(0, 1).equals(COMMENT_SYMBOL)) {
-    	    		String[] values = line.split(CSV_SYMBOL);
+    	    	if(!line.substring(0, 1).equals(Constants.COMMENT_SYMBOL)) {
+    	    		String[] values = line.split(Constants.CSV_SYMBOL);
     	    		if(values.length >= 2) {
     	    			Double latitude = Double.valueOf(values[0].replace(".", ""))/1000;
     	    			Double longitude = Double.valueOf(values[1].replace(".", ""))/1000;
@@ -172,8 +152,8 @@ public class App
     	try (BufferedReader br = new BufferedReader(new FileReader(file))) {
     	    String line;
     	    while ((line = br.readLine()) != null) {
-    	    	if(!line.substring(0, 1).equals(COMMENT_SYMBOL)) {
-    	    		String[] values = line.split(CSV_SYMBOL);
+    	    	if(!line.substring(0, 1).equals(Constants.COMMENT_SYMBOL)) {
+    	    		String[] values = line.split(Constants.CSV_SYMBOL);
     	    		if(values.length >= 2) {
     	    			Double latitude = Double.valueOf(values[0].replace(".", ""))/1000;
     	    			Double longitude = Double.valueOf(values[1].replace(".", ""))/1000;
@@ -218,8 +198,8 @@ public class App
     	try (BufferedReader br = new BufferedReader(new FileReader(file))) {
     	    String line;
     	    while ((line = br.readLine()) != null) {
-    	    	if(!line.substring(0, 1).equals(COMMENT_SYMBOL)) {
-    	    		String[] values = line.split(CSV_SYMBOL);
+    	    	if(!line.substring(0, 1).equals(Constants.COMMENT_SYMBOL)) {
+    	    		String[] values = line.split(Constants.CSV_SYMBOL);
     	    		if(values.length >= 2) {
     	    			Double latitude = Double.valueOf(values[0].replace(".", ""))/1000;
     	    			Double longitude = Double.valueOf(values[1].replace(".", ""))/1000;
