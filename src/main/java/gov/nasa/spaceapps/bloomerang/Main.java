@@ -15,9 +15,15 @@ public class Main {
         BloomerangController controller = BloomerangController.getController(dataLoader, risk, bloomerang);
 
         Coordinates coordinates = new Coordinates(0, 0);
-        int percentageRisk = controller.getRiskPercentageOf(coordinates);
+        Double percentageRisk = controller.getRiskPercentageOf(coordinates);
 
-        System.out.println("Hay un " + percentageRisk + "% de riesgo");
+        if (percentageRisk == null) {
+            System.out.println("No se ha podido calcular el riesgo");
+        }
+        else {
+            System.out.println("Hay un " + percentageRisk + "% de riesgo");
+        }
+
     }
 
 }

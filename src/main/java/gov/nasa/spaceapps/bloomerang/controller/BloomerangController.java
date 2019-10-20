@@ -26,11 +26,8 @@ public final class BloomerangController {
         return singleton;
     }
 
-    public Integer getRiskPercentageOf(Coordinates coordinates) {
-
-
-
-        return null;
+    public Double getRiskPercentageOf(Coordinates coordinates) {
+        return this.bloomerang.getBloomRiskPercentage(this.risk, coordinates);
     }
 
 }
