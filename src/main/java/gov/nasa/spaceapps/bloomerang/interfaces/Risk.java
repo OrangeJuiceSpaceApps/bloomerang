@@ -2,24 +2,22 @@ package gov.nasa.spaceapps.bloomerang.interfaces;
 
 public interface Risk {
 
-    int getSalinity();
+    double getSalinity();
 
-    int getTemperature();
+    double getTemperature();
 
-    int getDisolvedOxigen();
+    double getDisolvedOxigen();
 
-    int getPhosphate();
+    double getPhosphate();
 
-    int getNitrate();
+    double getNitrate();
 
-    int getRiskPercentageSalinity(int salinity);
+    boolean isRiskSalinity(double salinity);
 
-    int getRiskPercentageTemperature(int temperature);
+    double getRiskPercentageTemperature(double temperature);
 
-    int getRiskPercentageDisolvedOxigen(int disolvedOxigen);
+    boolean isRiskDisolvedOxigen(double disolvedOxigen);
 
-    int getRiskPercentagePhosphate(int phosphate);
-
-    int getRiskPercentageNitrate(int nitrate);
+    double getRiskPercentageNitratePhosphate(double nitrate, double phosphate);
 
 }
