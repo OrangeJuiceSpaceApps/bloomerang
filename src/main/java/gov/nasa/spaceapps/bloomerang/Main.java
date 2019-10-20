@@ -2,6 +2,7 @@ package gov.nasa.spaceapps.bloomerang;
 
 import gov.nasa.spaceapps.bloomerang.controller.BloomerangController;
 import gov.nasa.spaceapps.bloomerang.entities.Coordinates;
+import gov.nasa.spaceapps.bloomerang.entities.Data;
 import gov.nasa.spaceapps.bloomerang.interfaces.Bloomerang;
 import gov.nasa.spaceapps.bloomerang.interfaces.BloomerangDataLoader;
 import gov.nasa.spaceapps.bloomerang.interfaces.Risk;
@@ -12,6 +13,8 @@ public class Main {
         BloomerangDataLoader dataLoader = null;
         Risk risk = null;
         Bloomerang bloomerang = null;
+        dataLoader = new Data();
+        dataLoader.load();
         BloomerangController controller = BloomerangController.getController(dataLoader, risk, bloomerang);
 
         Coordinates coordinates = new Coordinates(0, 0);
