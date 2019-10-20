@@ -28,10 +28,6 @@ public class BloomerangImpl implements Bloomerang {
         Map<Integer, Double> phosphate = this.dataLoader.getPhosphateMap().get(coordinates);
         Map<Integer, Double> disolvedOxigen = this.dataLoader.getDisolvedOxigenMap().get(coordinates);
 
-        for (Double value : salinity.values()) {
-
-        }
-
         Iterator<Double> it = salinity.values().iterator();
         Double preValue = null;
         Double nexValue = null;
