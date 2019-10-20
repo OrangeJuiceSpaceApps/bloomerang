@@ -5,12 +5,16 @@ import gov.nasa.spaceapps.bloomerang.entities.Coordinates;
 import gov.nasa.spaceapps.bloomerang.interfaces.Bloomerang;
 import gov.nasa.spaceapps.bloomerang.interfaces.BloomerangDataLoader;
 import gov.nasa.spaceapps.bloomerang.interfaces.Risk;
+import gov.nasa.spaceapps.bloomerang.interfaces.impl.BloomerangImpl;
+import gov.nasa.spaceapps.bloomerang.interfaces.impl.RiskImpl;
+import gov.nasa.spaceapps.bloomerang.utils.Constans;
 
 public class Main {
 
     public static void main(String[] args) {
-        Risk risk = null;
-        Bloomerang bloomerang = null;
+        BloomerangDataLoader dataLoader = null;
+        Risk risk = new RiskImpl(Constans.DEFAULT_SALINITY, Constans.DEFAULT_TEMPERATURE, Constans.DEFAULT_DISOLVED_OXIGEN, Constans.DEFAULT_PHOSPHATE, Constans.DEFAULT_NITRATE);
+        Bloomerang bloomerang = new BloomerangImpl(dataLoader);
         BloomerangController controller = BloomerangController.getController(risk, bloomerang);
 
         Coordinates coordinates = new Coordinates(0, 0);

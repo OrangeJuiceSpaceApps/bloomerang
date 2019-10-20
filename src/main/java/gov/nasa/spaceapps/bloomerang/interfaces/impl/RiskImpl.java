@@ -13,6 +13,14 @@ public class RiskImpl implements Risk {
     private static final double TEMP_MIN = 5.0;
     private static final double TEMP_MAX = 40.0;
 
+    public RiskImpl(double salinity, double temperature, double disolvedOxigen, double phosphate, double nitrate) {
+        this.salinity = salinity;
+        this.temperature = temperature;
+        this.disolvedOxigen = disolvedOxigen;
+        this.phosphate = phosphate;
+        this.phosphate = nitrate;
+    }
+
     @Override
     public double getSalinity() {
         return this.salinity;
