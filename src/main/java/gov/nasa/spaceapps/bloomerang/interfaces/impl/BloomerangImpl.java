@@ -5,6 +5,7 @@ import gov.nasa.spaceapps.bloomerang.interfaces.Bloomerang;
 import gov.nasa.spaceapps.bloomerang.interfaces.BloomerangDataLoader;
 import gov.nasa.spaceapps.bloomerang.interfaces.Risk;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class BloomerangImpl implements Bloomerang {
@@ -27,7 +28,19 @@ public class BloomerangImpl implements Bloomerang {
         Map<Integer, Double> phosphate = this.dataLoader.getPhosphateMap().get(coordinates);
         Map<Integer, Double> disolvedOxigen = this.dataLoader.getDisolvedOxigenMap().get(coordinates);
 
-        
+        for (Double value : salinity.values()) {
+
+        }
+
+        Iterator<Double> it = salinity.values().iterator();
+        Double preValue = null;
+        Double nexValue = null;
+        if (it.hasNext()) {
+            preValue = it.next();
+        }
+        while (it.hasNext()) {
+            nexValue = it.next();
+        }
 
         return percentageRisk;
     }

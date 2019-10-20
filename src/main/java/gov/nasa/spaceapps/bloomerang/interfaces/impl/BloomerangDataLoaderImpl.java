@@ -1,4 +1,4 @@
-package gov.nasa.spaceapps.bloomerang.entities;
+package gov.nasa.spaceapps.bloomerang.interfaces.impl;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,10 +10,11 @@ import java.util.HashMap;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import gov.nasa.spaceapps.bloomerang.entities.Coordinates;
 import gov.nasa.spaceapps.bloomerang.interfaces.BloomerangDataLoader;
 import gov.nasa.spaceapps.bloomerang.utils.Constants;
 
-public class Data implements BloomerangDataLoader{
+public class BloomerangDataLoaderImpl implements BloomerangDataLoader{
 	private Map<Coordinates, Map<Integer, Double>> temperatureMap;
 	private Map<Coordinates, Map<Integer, Double>> salinityMap;
 	private Map<Coordinates, Map<Integer, Double>> disolvedOxigenMap;
@@ -25,7 +26,7 @@ public class Data implements BloomerangDataLoader{
 	 * @param latitude
 	 * @param longitude
 	 */
-	public Data() {
+	public BloomerangDataLoaderImpl() {
 		this.temperatureMap = new HashMap<>();
 		this.salinityMap = new HashMap<>();
 		this.disolvedOxigenMap = new HashMap<>();
