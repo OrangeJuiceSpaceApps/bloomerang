@@ -8,14 +8,14 @@ public interface BloomerangDataLoader {
 
     void load();
 
-    Map<Coordinates, Map<Integer, Integer>> getSalinityMap();
+    Map<Coordinates, Map<Integer, Double>> getSalinityMap();
 
-    Map<Coordinates, Map<Integer, Integer>> getTemperatureMap();
+    Map<Coordinates, Map<Integer, Double>> getTemperatureMap();
 
-    Map<Coordinates, Map<Integer, Integer>> getDisolvedOxigenMap();
+    Map<Coordinates, Map<Integer, Double>> getDisolvedOxigenMap();
 
-    Map<Coordinates, Map<Integer, Integer>> getPhosphateMap();
+    Map<Coordinates, Map<Integer, Double>> getPhosphateMap();
 
-    Map<Coordinates, Map<Integer, Integer>> getNitrateMap();
+    Map<Coordinates, Map<Integer, Double>> getNitrateMap();
 
 }

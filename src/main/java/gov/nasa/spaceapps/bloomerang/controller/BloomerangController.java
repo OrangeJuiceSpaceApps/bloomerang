@@ -7,21 +7,19 @@ import gov.nasa.spaceapps.bloomerang.interfaces.Risk;
 
 public final class BloomerangController {
 
-    private BloomerangDataLoader dataLoader;
     private Risk risk;
     private Bloomerang bloomerang;
 
     private static BloomerangController singleton;
 
-    private BloomerangController(BloomerangDataLoader dataLoader, Risk risk, Bloomerang bloomerang) {
-        this.dataLoader = dataLoader;
+    private BloomerangController(Risk risk, Bloomerang bloomerang) {
         this.risk = risk;
         this.bloomerang = bloomerang;
     }
 
-    public static BloomerangController getController(BloomerangDataLoader dataLoader, Risk risk, Bloomerang bloomerang) {
+    public static BloomerangController getController(Risk risk, Bloomerang bloomerang) {
         if (singleton == null) {
-            singleton = new BloomerangController(dataLoader, risk, bloomerang);
+            singleton = new BloomerangController(risk, bloomerang);
         }
         return singleton;
     }

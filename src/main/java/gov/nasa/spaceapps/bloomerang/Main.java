@@ -9,10 +9,9 @@ import gov.nasa.spaceapps.bloomerang.interfaces.Risk;
 public class Main {
 
     public static void main(String[] args) {
-        BloomerangDataLoader dataLoader = null;
         Risk risk = null;
         Bloomerang bloomerang = null;
-        BloomerangController controller = BloomerangController.getController(dataLoader, risk, bloomerang);
+        BloomerangController controller = BloomerangController.getController(risk, bloomerang);
 
         Coordinates coordinates = new Coordinates(0, 0);
         Double percentageRisk = controller.getRiskPercentageOf(coordinates);
