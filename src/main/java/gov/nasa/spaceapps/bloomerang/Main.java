@@ -18,7 +18,7 @@ public class Main {
         Bloomerang bloomerang = new BloomerangImpl(dataLoader);
         BloomerangController controller = BloomerangController.getController(risk, bloomerang);
 
-        Coordinates coordinates = new Coordinates(-0.5, -0.5);
+        Coordinates coordinates = new Coordinates(-65.5, -124.5);
         Double percentageRisk = controller.getRiskPercentageOf(coordinates);
 
         if (percentageRisk == null) {

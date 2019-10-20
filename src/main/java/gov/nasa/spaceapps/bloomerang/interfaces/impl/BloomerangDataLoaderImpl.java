@@ -187,11 +187,11 @@ public class BloomerangDataLoaderImpl implements BloomerangDataLoader{
 
 	@Override
 	public void load() {
-		String temperatureLoc = "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_A5B7_t07gp01.csv";
-		String salinityLoc = "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_A5B7_s07gp01.csv";
-		String oxyLoc = "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_O07gp01.csv";
-		String phosphateLoc = "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_p07gp01.csv";
-		String nitrateLoc = "C:\\Users\\Javier\\Desktop\\NASAAAA\\woa18_all_n07gp01.csv";
+		String temperatureLoc = "resources\\woa18_A5B7_t07gp01.csv";
+		String salinityLoc = "resources\\woa18_A5B7_s07gp01.csv";
+		String oxyLoc = "resources\\woa18_all_o07gp01.csv";
+		String phosphateLoc = "resources\\woa18_all_p07gp01.csv";
+		String nitrateLoc = "resources\\woa18_all_n07gp01.csv";
 		
 		readDataTemperatures(temperatureLoc);
 		readDataSalinity(salinityLoc);
